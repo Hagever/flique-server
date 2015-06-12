@@ -20,11 +20,15 @@
   },
   "homepage": "https://github.com/Hagever/flique-server",
   "devDependencies": {
+    "babel-eslint": "^3.1.15",
     "chai": "^3.0.0",
+    "eslint": "^0.22.1",
+    "eslint-plugin-react": "^2.5.0",
     "mocha": "^2.2.5"
   },
   "dependencies": {
     "babel": "^5.5.6",
+    "bluebird": "^2.9.27",
     "express": "^4.12.4",
     "node-neo4j": "^2.0.3"
   }
