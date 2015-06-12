@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"crea",
+				"createQuery"
+			],
+			[
+				"mee",
+				"meetup"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"pro",
+				"promisedQuery"
+			],
+			[
+				"meetup",
+				"meetupName"
+			],
+			[
 				"searc",
 				"searchFromDate"
 			],
@@ -183,16 +203,71 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "lib/index.js",
+			"settings":
+			{
+				"buffer_size": 407,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/models/User.js",
+			"settings":
+			{
+				"buffer_size": 1763,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/api/router.js",
+			"settings":
+			{
+				"buffer_size": 300,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "const router = require('./router');\nconst UserActions = require('actions/user');\nconst User = require('models/User');\n\nconst show = (req, res) => {\n  UserActions.findByUsername(req.params.id).then(user => {\n    const { token, ...userData } = user;\n    res.send(userData);\n  }).catch(() => {\n    res.status(400).send(\"not found.\");\n  });\n};\n\nconst list = (req, res) => {\n  res.status(403).send(`Forbidden.`);\n};\n\nconst update = (req, res) => {\n  res.send(`update ${req.params.id}`);\n};\n\nconst destroy = (req, res) => {\n  res.send(`removing ${req.params.id}`);\n};\n\nconst insert = (req, res) => {\n  var data = {\n    username: req.params['username'),\n    password: req.params('password'),\n    facebookId: req.params('facebookId'),\n    fullName: req.params('fullName')\n  };\n\n  new User(data);\n\n  res.send(`insert node`);\n};\n\nmodule.exports = router({\n  show,\n  list,\n  update,\n  destroy,\n  insert\n});\n",
+			"file": "lib/api/users.js",
+			"file_size": 941,
+			"file_write_time": 130785995512605056,
+			"settings":
+			{
+				"buffer_size": 896,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 311.0,
+		"height": 150.0,
 		"selected_items":
 		[
 			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"cyp",
+				"Set Syntax: Cypher"
+			],
+			[
+				"javascrip",
+				"Set Syntax: JavaScript Next"
+			],
+			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
 			],
 			[
 				"Package Control: ",
@@ -219,10 +294,6 @@
 				"Set Syntax: JavaScript (Rails)"
 			],
 			[
-				"java",
-				"Set Syntax: JavaScript (Rails)"
-			],
-			[
 				"remo",
 				"Package Control: Remove Package"
 			],
@@ -233,10 +304,6 @@
 			[
 				"mark",
 				"Set Syntax: Markdown"
-			],
-			[
-				"instal",
-				"Package Control: Install Package"
 			],
 			[
 				"html",
@@ -292,6 +359,18 @@
 	},
 	"file_history":
 	[
+		"/C/Dev/Projects/flique-server/lib/api/index.js",
+		"/C/Dev/Projects/flique-server/lib/api/users.js",
+		"/C/Dev/Projects/flique-server/index.js",
+		"/C/Dev/Projects/flique-server/views/react/app.js",
+		"/C/Dev/Projects/flique-server/lib/db.js",
+		"/C/Dev/Projects/flique-server/test/testData.cql",
+		"/C/Dev/Projects/flique-server/lib/models/Meetup.js",
+		"/C/Dev/Projects/flique-server/lib/models/User.js",
+		"/C/Dev/Projects/flique-server/.gitignore",
+		"/C/Users/Kfir/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Kfir/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Dev/Projects/flique-server/lib/actions/user.js",
 		"/C/Dev/Projects/shiftlift/views/react/screens/App/screens/Manage/screens/Invite/index.js",
 		"/C/Dev/Projects/shiftlift/views/react/screens/App/screens/Manage/screens/SwitchRequests/index.js",
 		"/C/Dev/Projects/shiftlift/views/react/screens/App/screens/Manage/screens/CreateSchedule/index.js",
@@ -309,7 +388,6 @@
 		"/C/Dev/Projects/shiftlift/test/unit/controllers/employee.test.js",
 		"/C/Dev/Projects/shiftlift/api/services/MailService.js",
 		"/C/Dev/Projects/shiftlift/test/fixtures/Store.json",
-		"/C/Users/Kfir/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/C/Dev/Projects/shiftlift/test/fixtures/Shift.json",
 		"/C/Dev/Projects/shiftlift/api/models/Employee.js",
 		"/C/Dev/Projects/shiftlift/config/local.js",
@@ -374,7 +452,6 @@
 		"/C/Dev/Projects/shiftlift/config/globals.js",
 		"/C/Dev/Projects/shiftlift/node_modules/sails/node_modules/express/package.json",
 		"/C/Dev/Projects/shiftlift/views/admin_manage.ejs",
-		"/C/Users/Kfir/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/C/Dev/Projects/shiftlift/webpack.config.js",
 		"/C/Dev/Projects/shiftlift/views/layout.ejs",
 		"/C/Dev/Projects/shiftlift/api/policies/isShiftStoreManager.js",
@@ -409,15 +486,7 @@
 		"/C/Dev/Projects/shiftlift/node_modules/moment/package.json",
 		"/C/Dev/Projects/shiftlift/node_modules/autoprefixer-loader/node_modules/autoprefixer-core/node_modules/caniuse-db/features-json/multicolumn.json",
 		"/C/Dev/Projects/shiftlift/.gitignore",
-		"/C/Dev/react-0.12.2/basic_toturial/template.html",
-		"/C/Dev/react-0.12.2/basic_toturial/temp.js",
-		"/C/Dev/react-0.12.2/basic_toturial/data.json",
-		"/C/Dev/react-0.12.2/basic_toturial/data.js",
-		"/C/Users/Kfir/AppData/Roaming/Sublime Text 2/Packages/User/SublimeServer.sublime-settings",
-		"/C/Users/Kfir/Desktop/Request 1.xml",
-		"/C/Users/Kfir/Desktop/Response 1.xml",
-		"/C/Users/Kfir/Desktop/page.html",
-		"/C/Dev/Projects/EmbeRoomies/Roomies/app/index.html"
+		"/C/Dev/react-0.12.2/basic_toturial/template.html"
 	],
 	"find":
 	{
@@ -515,8 +584,117 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "lib/index.js",
+					"settings":
+					{
+						"buffer_size": 407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								407,
+								407
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/models/User.js",
+					"settings":
+					{
+						"buffer_size": 1763,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1737,
+								1737
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1140.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/api/router.js",
+					"settings":
+					{
+						"buffer_size": 300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/api/users.js",
+					"settings":
+					{
+						"buffer_size": 896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								634,
+								634
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -902,8 +1080,12 @@
 		"selected_items":
 		[
 			[
+				"shif",
+				"/C/Dev/Projects/shiftlift/shiftlift.sublime-project"
+			],
+			[
 				"",
-				"/C/Dev/Projects/shiftlift-mobile-app/phoneshift.sublime-project"
+				"/C/Dev/Projects/shiftlift/shiftlift.sublime-project"
 			]
 		],
 		"width": 380.0
