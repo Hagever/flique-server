@@ -1,7 +1,7 @@
 var vis = require('vis/dist/vis');
 var io = require('socket.io-client');
 var network = null;
-var facebookImage = user => `https://graph.facebook.com/${user}/picture?width=100&height=100`;
+var facebookImage = user => `https://graph.facebook.com/${user}/picture?width=200&height=200`;
 
 // create people.
 // value corresponds with the age of the person
@@ -26,7 +26,7 @@ var data = {
 var options = {
   nodes: {
     borderWidth:4,
-    size:30,
+    size:50,
   color: {
       border: '#222222',
       background: '#666666'
@@ -35,11 +35,13 @@ var options = {
   },
   physics: {
     repulsion: {
-      nodeDistance: 200
-    }
+      nodeDistance: 150
+    },
+    solver: 'repulsion'
   },
   edges: {
-    color: 'lightgray'
+    color: '#0fd02e',
+    width: 3
   }
 };
 network = new vis.Network(container, data, options);
