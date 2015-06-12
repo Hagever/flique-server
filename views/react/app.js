@@ -6,14 +6,12 @@ var facebookImage = user => `https://graph.facebook.com/${user}/picture?width=10
 // create people.
 // value corresponds with the age of the person
 var nodes = window.nodes = new vis.DataSet([
-  {id: 1,  shape: 'circularImage', image: facebookImage('omritzek') },
   {id: 2,  shape: 'circularImage', image: facebookImage('galstar') },
   {id: 3,  shape: 'circularImage', image: facebookImage('golan.levi.56') },
   {id: 4,  shape: 'circularImage', image: facebookImage('kfirstri') },
 ]);
 
 var edges = window.edges = new vis.DataSet([
-  {from: 1, to: 2},
   {from: 2, to: 3},
   {from: 2, to: 4},
   {from: 4, to: 3},
@@ -35,6 +33,11 @@ var options = {
     },
     font:{color:'#eeeeee'}
   },
+  physics: {
+    repulsion: {
+      nodeDistance: 200
+    }
+  },
   edges: {
     color: 'lightgray'
   }
@@ -43,4 +46,10 @@ network = new vis.Network(container, data, options);
 window.network = network;
 
 
-io.connect();
+var socket = io();
+socket.on('node', (data) => {
+  nodes.add(data);
+});
+socket.on('edge', (data) => {
+  edges.add(data);
+});
