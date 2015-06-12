@@ -9,6 +9,14 @@ create (test:User { username: 'test', fullName: 'Test the Tester', password: '12
 // Create the meetups
 create (hackgeny:Meetup {name:'Hack Gen Y', location: 'Even Yehuda'})
 
+// Create the checked in
+create (gal)-[:CHECKED_IN]->(hackgeny)
+create (kfir)-[:CHECKED_IN]->(hackgeny)
+create (omri)-[:CHECKED_IN]->(hackgeny)
+create (golan)-[:CHECKED_IN]->(hackgeny)
+create (avihay)-[:CHECKED_IN]->(hackgeny)
+create (test)-[:CHECKED_IN]->(hackgeny)
+
 // Create the Fliques
 create (gal)-[:FLIQUED]->(f1:Flique {date: '12/06/2015'})<-[:FLIQUED]-(kfir)
 create (f1)-[:HAPPENED_IN]->(hackgeny)
