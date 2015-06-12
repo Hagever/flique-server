@@ -1,0 +1,22 @@
+{
+  "name": "flique-server",
+  "version": "1.0.0",
+  "description": "flique me in the bottocks",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Hagever/flique-server.git"
+  },
+  "keywords": [
+    "flique"
+  ],
+  "author": "Hagever team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hagever/flique-server/issues"
+  },
+  "homepage": "https://github.com/Hagever/flique-server"
+}
