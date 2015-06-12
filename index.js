@@ -1,1 +1,2 @@
-require('babel')({ stage: 0 });
+require('babel/register')({ stage: 0 });
+require('./lib');
