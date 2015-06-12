@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "flique me in the bottocks",
   "main": "index.js",
+  "config": {
+    "MOCHA_OPTS": "--reporter spec --require test/call_babel"
+  },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
