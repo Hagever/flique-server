@@ -41,15 +41,14 @@ describe('UserActions', () => {
         UserActions.findByToken({ token: 'abanibi' }).then(done).catch(() => done());
       });
     });
+  });
+  describe('find a user', () => {
+    it('should throw when user not found', (done) => {
+      UserActions.findByUsername('whattttt').then(done).catch(() => done());
+    });
 
-    describe('find a user', () => {
-      it('should throw when user not found', (done) => {
-        UserActions.findByUsername('whattttt').then(done).catch(() => done());
-      });
-
-      it('should find the user when its okay', (done) => {
-        UserActions.findByUsername('test').then(() => done()).catch(done);
-      });
+    it('should find the user when its okay', (done) => {
+      UserActions.findByUsername('test').then(() => done()).catch(done);
     });
   });
 });
