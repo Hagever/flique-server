@@ -10,7 +10,7 @@ var webpackConf = {
   entry: './views/react/app.js',
   output: {
     path: './public/dist',
-    filename: '[hash].js',
+    filename: '[name].js',
     chunkFilename: "bundle.[chunkhash].js",
     publicPath: '/dist/'
   },
