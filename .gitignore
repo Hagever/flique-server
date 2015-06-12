@@ -1,3 +1,4 @@
 /node_modules
 webpack.stats.json
 /public/dist
+npm-debug.log
