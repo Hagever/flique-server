@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/Hagever/flique-server/issues"
   },
-  "homepage": "https://github.com/Hagever/flique-server"
+  "homepage": "https://github.com/Hagever/flique-server",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "express": "^4.12.4"
+  }
 }
