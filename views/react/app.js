@@ -1,4 +1,5 @@
 var vis = require('vis/dist/vis');
+var Color = require('color');
 var io = require('socket.io-client');
 var network = null;
 var facebookImage = user => `https://graph.facebook.com/${user}/picture?width=200&height=200`;
@@ -17,6 +18,9 @@ var edges = window.edges = new vis.DataSet([
   {from: 4, to: 3},
 ]);
 
+const { color, backgroundColor } = window.getComputedStyle(document.body);
+const fgColor = Color(color);
+
 // create a network
 var container = document.getElementById('main-app');
 var data = {
@@ -25,11 +29,16 @@ var data = {
 };
 var options = {
   nodes: {
-    borderWidth:4,
+    borderWidth: 10,
+    borderWidthSelected: 15,
     size:50,
-  color: {
-      border: '#222222',
-      background: '#666666'
+    color: {
+      border: fgColor.hexString(),
+      background: fgColor.hexString(),
+      highlight: {
+        border: fgColor.lighten(0.1).hexString(),
+        background: fgColor.lighten(0.1).hexString()
+      }
     },
     font:{color:'#eeeeee'}
   },
@@ -40,7 +49,7 @@ var options = {
     solver: 'repulsion'
   },
   edges: {
-    color: '#0fd02e',
+    color: color,
     width: 3
   }
 };
@@ -53,5 +62,7 @@ socket.on('node', (data) => {
   nodes.add(data);
 });
 socket.on('edge', (data) => {
-  edges.add(data);
+  if (!edges.get().filter(e => e.to === data.to && e.from === e.from)[0]) {
+    edges.add(data);
+  }
 });
